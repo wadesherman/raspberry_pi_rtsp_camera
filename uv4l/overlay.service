@@ -1,0 +1,15 @@
+[Unit]
+Description=Camera Overlay Text
+Requires=cam.service
+After=cam.service
+
+[Service]
+ExecStart=/bin/bash /home/pi/overlay.sh
+WorkingDirectory=/home/pi/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
